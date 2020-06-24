@@ -63,4 +63,7 @@ RUN cd /tmp/elasticlient/build && make -j 8 && make install && ldconfig
 RUN cp -R /tmp/elasticlient/build/lib/* /usr/local/lib
 RUN cp -R /tmp/elasticlient/external/cpr/include/* /usr/local/include
 
+RUN apt-get update
+RUN apt-get install -y nano php php-mysql libqt5gui5
+
 RUN ldconfig
