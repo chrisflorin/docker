@@ -112,7 +112,7 @@ services:
 
     image: redis:latest
     expose:
-      - 6379:6379
+      - 6379
     restart: always
 
 #  splunk:
