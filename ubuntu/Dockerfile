@@ -21,7 +21,7 @@ RUN apt-get update
 RUN rm -f /etc/service/sshd/down
 
 ## Install an SSH of your choice.
-COPY .ssh/id_rsa.pub /tmp/id_rsa.pub
+COPY ssh/id_rsa.pub /tmp/id_rsa.pub
 RUN cat /tmp/id_rsa.pub >> /root/.ssh/authorized_keys && rm -f /tmp/id_rsa.pub
 
 COPY ssh/sshd_config /etc/ssh/sshd_config
