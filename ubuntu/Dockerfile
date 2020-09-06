@@ -32,6 +32,7 @@ RUN curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > pac
 RUN install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
 RUN sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 
+RUN apt-get update
 #RUN apt-get install -y apt-transport-https
 #RUN apt-get install -y code # or code-insiders
 RUN apt-get install -y gdb gdbserver
